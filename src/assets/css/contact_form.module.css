@@ -1,0 +1,52 @@
+
+.main{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.main form{
+    display: flex;
+    flex-flow: column;
+    background: rgb(1, 1, 2);
+    justify-content: space-around;
+    align-items: center;
+    height: 51%;
+    position: relative;
+    top: 18%;
+    border-radius: 1em;
+}
+.main form input{
+  
+    font-size: x-large;
+    text-align: center;
+    border-radius: 0.2em;
+    width: 18em;
+    max-width: 93%;
+}
+.main form textarea{
+    font-size: x-large;
+    text-align: center;
+    border-radius: 0.2em;
+    width: 15em;
+    max-width: 93%;
+}
+.main form .button-panel{
+    display: flex;
+    width: 81%;
+    justify-content: inherit;
+}
+.main form button{
+    color: #fefff7e6;
+    background: #a90303;
+    border: none;
+    font-size: x-large;
+}
+.main form button[type="submit"]{
+    background: #28a111;
+}
+
+label{
+    color:white;
+}

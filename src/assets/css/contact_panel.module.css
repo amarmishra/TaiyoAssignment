@@ -1,0 +1,48 @@
+.container{
+    color: white;
+    background-color: #333;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    border: 1px solid;
+    
+    padding: 5px;
+
+}
+.content {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+.content span:nth-child(1){
+    font-size: x-large;
+}
+.container span{
+    text-align: left;
+    padding: 5px;
+}
+.container span:nth-child(2){
+    border: 1px solid;
+}
+.action-panel{
+    display: flex;
+    flex-flow: row;
+    justify-content: end;
+    align-items: flex-start;
+}
+
+button{
+    border: none;
+    color: white;
+    background: rgb(199, 21, 51);
+    padding: 10px;
+}
+button.edit{
+    background: rgb(135 117 86);
+}
+.completed{
+
+}
+.notcompleted{
+
+}

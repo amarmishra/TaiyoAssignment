@@ -1,0 +1,9 @@
+.add-contact-button{
+    font-size: x-large;
+    margin: 0 auto;
+    background: #06090c;
+    border: none;
+    color: #ffe000;
+    border-radius: 0.2em;
+    width: 10em;
+}
