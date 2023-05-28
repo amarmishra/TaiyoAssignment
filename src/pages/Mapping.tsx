@@ -36,7 +36,7 @@ export const Mapping = () => {
   return (
 
 
-    <div style={{width:'fit-content'}}>
+    <div className={styles['map-container']}>
     <MapContainer zoom={1} center={[0, 0]}  scrollWheelZoom={false}>
     <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

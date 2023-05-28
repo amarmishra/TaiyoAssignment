@@ -1,0 +1,57 @@
+.navbar{
+    background-color: #0b0f10;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.navbar a{
+    z-index: 1;
+    color: white;
+    
+}
+
+.menu-bars{
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+}
+
+.nav-menu{
+    background-color: #0b0f10;
+    width: 300px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 81px;
+
+    left:-100%;
+    transition: 700ms;
+}
+.nav-menu.active{
+    left: 0;
+    transition: 300ms;
+    z-index: 600;
+}
+
+.navbar-toggle{
+    list-style: none;
+}
+.navbar-toggle a{
+    color:white
+}
+.nav-text{
+    list-style: none;
+
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    height: 50px;
+    
+}
+.nav-text a{
+    color: white;
+}

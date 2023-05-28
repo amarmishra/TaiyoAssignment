@@ -106,6 +106,7 @@ export const Chart = () => {
 
   return (
     <>
+    <div style={{marginTop:"50px"}}>
     <span>Filter By</span>
     <select onChange={handleSelection} defaultValue="default">
         <option value="default">{"Choose a category"}</option>
@@ -113,8 +114,9 @@ export const Chart = () => {
         <option value="deaths">{"Deaths"}</option>
         <option value="recovered">{"Recovered"}</option>
     </select>
+    </div>
 
-    { dataQuery.isLoading ?  <h1>Loading....</h1> : null}
+    { dataQuery.isLoading ?  <h1>Please select a category</h1> : null}
     {dataQuery.isError ? <h1>Error loading data!!!</h1>: null}
     {data ? <Line options={options.current} data={data} /> : null}
    

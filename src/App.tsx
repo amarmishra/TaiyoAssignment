@@ -3,12 +3,13 @@ import {Routes,Route} from 'react-router-dom'
 import { Home } from './pages/Home';
 import {Chart} from './pages/Chart'
 import {Mapping} from './pages/Mapping'
+import  {Sidebar} from './components/Sidebar'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      {/* <SideBar></Sidebar> */}
+      <Sidebar></Sidebar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/chart' element={<Chart></Chart>}></Route>
