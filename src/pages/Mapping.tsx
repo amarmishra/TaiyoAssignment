@@ -30,7 +30,7 @@ export const Mapping = () => {
 
   useEffect(() => {
       dataQuery.refetch()
-  }, [])
+  }, [dataQuery])
   
 
   return (
@@ -44,9 +44,9 @@ export const Mapping = () => {
     />
     {dataQuery.data?  dataQuery.data.map((countryData:Country)=>{
 
-            const {lat,long,flag}=countryData.countryInfo  //for marker
-            const {country,active,recovered,deaths}=countryData //for popup
-            return   <Marker position={[lat, long]}>
+            const {lat,long,flag,_id}=countryData.countryInfo  //for marker
+            const {country,active,recovered,deaths,}=countryData //for popup
+            return   <Marker key={country+_id} position={[lat, long]}>
                         <Popup>
                             <div className={styles['popup']}>
                               <div className={styles['country-heading']}>{country}<div className={styles['image-container']}><img src={flag} alt={"flag"}></img></div></div>
@@ -59,11 +59,6 @@ export const Mapping = () => {
                         </Popup>
                       </Marker>
     }): null}
-    {/* <Marker position={[51.505, -0.09]}>
-      <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
-      </Popup>
-    </Marker> */}
   </MapContainer>
   <div>
   

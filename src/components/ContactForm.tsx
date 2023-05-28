@@ -94,20 +94,15 @@ export const ContactForm: React.FC<Props> = ({setShowForm,editContact,setEditCon
            
              
              
-        }else{
-            //BIGGGGGGGGGGGGG ****JUGAAD TRYING TO RERENDER THE FORM(only one time) SO THAT inputRef has value
-            if(!editContact){
-                setFormData(formDataIntial)
-            }
         }
        
         
          return ()=>{
-             /**Remove event listeners from inputRef DOM nodes */
+            
          
          }
-
-
+         
+         //eslint-disable-next-line
     },[])
 
    
@@ -116,10 +111,7 @@ export const ContactForm: React.FC<Props> = ({setShowForm,editContact,setEditCon
         
         e.preventDefault()
         
-        //can add ToastProvider for notifications if title is empty(currently required in form)
-    
-        //get userId from AuthProvider
-        const userId=1
+        
         if(editContact){
             
             //editContact action is dispatched

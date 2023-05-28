@@ -1,4 +1,4 @@
-import {addCon,delCon,editCon,addContact,deleteContact,editContact} from '../actions/contacts'
+import {addCon,delCon,editCon} from '../actions/contacts'
 
 export interface Contact{
     firstName:string,
@@ -24,16 +24,15 @@ function contactReducer(state: ContactState=intitialValue,action: ContactAction)
       case delCon:
         return {
           ...state,
-          contacts: state.contacts.filter((contact)=>contact.id!=action.payload.id)
+          contacts: state.contacts.filter((contact)=>contact.id!==action.payload.id)
         }
  
         
 
       case editCon:
         {
-          const {id,...otherProperties}=action.payload
-          let index=state.contacts.findIndex((contact)=>contact.id==id)
-        //   let prevContact=contacts[index]
+          const {id}=action.payload
+          let index=state.contacts.findIndex((contact)=>contact.id===id)
           let newContactsList=[...state.contacts]
           newContactsList.splice(index,1,{...action.payload})
           return {

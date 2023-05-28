@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { createStore,combineReducers } from 'redux';
+import { createStore } from 'redux';
 import contactReducer from './store/reducers/contacts'
 //import React-Redux provider
 import { Provider } from 'react-redux';

@@ -27,7 +27,7 @@
 .action-panel{
     display: flex;
     flex-flow: row;
-    justify-content: end;
+    justify-content: space-around;
     align-items: flex-start;
 }
 

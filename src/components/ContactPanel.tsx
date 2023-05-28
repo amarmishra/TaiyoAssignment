@@ -10,7 +10,7 @@ interface Props{
 
 const ContactPanel: React.FC<Props> = ({contact,setEditContact}) => {
 
-    const {firstName,lastName,active,id}=contact
+    const {firstName,lastName,active}=contact
 
     const dispatch=useDispatch()
     

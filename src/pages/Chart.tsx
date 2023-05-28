@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState,useEffect} from 'react'
+import {useState,useEffect,useRef} from 'react'
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
@@ -41,7 +41,7 @@ export const Chart = () => {
     //Line chart props states
     const [selected,setSelected]=useState<string>("default")
     const [data,setData]=useState<ChartData<'line'>>()
-    const [options,setOptions]=useState<ChartOptions<'line'>>({
+    const options=useRef<ChartOptions<'line'>>({
         responsive: true,
     plugins: {
         legend: {
@@ -72,14 +72,20 @@ export const Chart = () => {
 
         if(selected!=='default'){
              //call api here upon selection
-                dataQuery.refetch()
-        }
-      }, [selected])
-
-      useEffect(() => {
-
-        if(dataQuery.data){
+             
+                    dataQuery.refetch()
+                   
+                       
+                    
             
+             
+        }
+       // eslint-disable-next-line
+      }, [selected])   
+
+
+      useEffect(()=>{
+        if(dataQuery.data){
             setData({
                 labels:Object.keys(dataQuery.data),
                 datasets: [
@@ -94,10 +100,8 @@ export const Chart = () => {
                 ],
             })
         }
-      }, [dataQuery.data])
-      
-
-      
+        // eslint-disable-next-line
+      },[dataQuery.data])
       
 
   return (
@@ -112,7 +116,7 @@ export const Chart = () => {
 
     { dataQuery.isLoading ?  <h1>Loading....</h1> : null}
     {dataQuery.isError ? <h1>Error loading data!!!</h1>: null}
-    {data ? <Line options={options} data={data} /> : null}
+    {data ? <Line options={options.current} data={data} /> : null}
    
     </>
   )
